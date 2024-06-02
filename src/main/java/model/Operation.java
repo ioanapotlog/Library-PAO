@@ -1,7 +1,6 @@
 package model;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -11,7 +10,7 @@ public abstract class Operation extends BaseEntity {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    protected Operation() {}
+    protected Operation() { }
 
     public Operation(User user) {
         this.user = user;

@@ -4,8 +4,9 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "DISCRIMINATOR", discriminatorType = DiscriminatorType.STRING)
 @Table(name = "BOOKS")
-public abstract class Book extends BaseEntity {
+public class Book extends BaseEntity {
     @Column(name = "TITLE")
     private String title;
 
@@ -18,17 +19,13 @@ public abstract class Book extends BaseEntity {
     @Column(name = "GENRE")
     private String genre;
 
-    @Column(name = "AVAILABILITY")
-    private Boolean availability;
-
     protected Book() {}
 
-    public Book(String title, String author, Integer publicationYear, String genre, Boolean availability) {
+    public Book(String title, String author, Integer publicationYear, String genre) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
         this.genre = genre;
-        this.availability = availability;
     }
 
     public String getTitle() {
@@ -61,13 +58,5 @@ public abstract class Book extends BaseEntity {
 
     public void setGenre(String genre) {
         this.genre = genre;
-    }
-
-    public boolean isAvailability() {
-        return availability;
-    }
-
-    public void setAvailability(boolean availability) {
-        this.availability = availability;
     }
 }

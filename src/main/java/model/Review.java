@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name = "REVIEWS")
 public class Review extends BaseEntity {
 
-    @Column(name = "RATIING")
+    @Column(name = "RATING")
     private Integer rating;
 
     @Column(name = "COMMENT")
@@ -34,6 +34,10 @@ public class Review extends BaseEntity {
         this.reviewDate = reviewDate;
     }
 
+    public Integer getRating() {
+        return rating;
+    }
+
     public Book getBook() {
         return book;
     }
@@ -49,4 +53,5 @@ public class Review extends BaseEntity {
     public void setReviewer(User reviewer) {
         this.reviewer = reviewer;
     }
+
 }

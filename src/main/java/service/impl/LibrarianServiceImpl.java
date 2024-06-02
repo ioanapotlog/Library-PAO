@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 public class LibrarianServiceImpl implements LibrarianService {
+    /*
 
     @Override
     public void borrowBooks(User user, List<PhysicalBook> books) {
@@ -59,5 +60,6 @@ public class LibrarianServiceImpl implements LibrarianService {
         System.out.println("Return operation logged: User '" + user.getFirstName() + " " + user.getLastName() +
                 "' returned the following books: " + returnedBooks.size());
     }
+    */
 
 }

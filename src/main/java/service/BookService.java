@@ -1,24 +1,23 @@
 package service;
 
-import model.Book;
-import model.PhysicalBook;
-import model.DigitalBook;
-import model.AudioBook;
-
-import java.util.List;
+import java.sql.Connection;
 
 public interface BookService {
-    void addPhysicalBook(PhysicalBook book);
-    void addDigitalBook(DigitalBook book);
-    void addAudioBook(AudioBook book);
+    void showBookByTitle(Connection con, String title);
 
-    void removeBook(Book book);
+    void editBook(Connection con, long bookId);
 
-    List<Book> getAllBooks();
+    void deleteBook(Connection con, long bookId);
 
-    List<Book> searchBooksByTitle(String title);
-    List<Book> searchBooksByAuthor(String author);
-    List<Book> searchBooksByGenre(String genre);
+    void showAllPhysicalBooks(Connection con);
 
-    boolean checkAvailability(Book book);
+    void showAllAudioBooks(Connection con);
+
+    void showAllDigitalBooks(Connection con);
+
+    boolean bookExists(Connection con, int bookId);
+
+    Long getBookIdByTitle(Connection con, String title);
+
+    Integer getCopyCountById(Connection con, Long bookId);
 }
