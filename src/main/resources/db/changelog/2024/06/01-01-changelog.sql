@@ -116,7 +116,7 @@ CREATE TABLE USERS
 
 -- changeset ioana:1717230887398-12
 ALTER TABLE BORROWED_BOOKS
-    ADD CONSTRAINT uc_borrowed_books_borrowedbooks UNIQUE ("borrowedBooks_ID");
+    ADD CONSTRAINT uc_borrowed_books_borrowedbooks UNIQUE (BORROWING_ID, "borrowedBooks_ID");
 
 -- changeset ioana:1717230887398-13
 ALTER TABLE AUDIO_BOOKS
